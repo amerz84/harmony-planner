@@ -1,0 +1,7 @@
+{
+  "name": "Harmony Planner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
