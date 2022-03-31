@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tasks"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Task Details</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/', 'tasks', loadedTask.id, 'edit-task-item']">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onDeleteTask()">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="4" text-center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ loadedTask.title }}</ion-card-title>
+            <ion-card-subtitle>{{ loadedTask.details }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>Completed?</ion-label>
+              <ion-checkbox checked="{{ loadedTask.completed || false }}"></ion-checkbox>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

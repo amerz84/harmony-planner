@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-icon  slot="start" name="home" class="ion-margin"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="border-left">Tasks</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['./', 'new-task-item']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <task-item *ngFor="let task of tasks" [taskItem]="task"></task-item>
+</ion-list>
+</ion-content>

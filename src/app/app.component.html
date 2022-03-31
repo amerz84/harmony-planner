@@ -1,3 +1,29 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="menu-content" menuId="main-menu" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Harmony Planner</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="main-menu">
+          <ion-item lines="none" routerLink="./tasks" button>
+            <ion-icon name="checkbox" slot="start"></ion-icon>
+            <ion-label>Tasks</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item-divider>
+        </ion-item-divider>
+        <ion-menu-toggle menu="main-menu">
+          <ion-item (click)="onSignOut()" button>
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            <ion-label>Sign Out</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main id="menu-content"></ion-router-outlet>
 </ion-app>
